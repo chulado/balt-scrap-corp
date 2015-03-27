@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Baltimore Scrap Corp</title>
+
+    <!-- build:css styles/main.css -->
+    <link href="vendor/normalize-css/normalize.css" rel="stylesheet">
+    <link href="vendor/slicknav/slicknav.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <link href="https://fontastic.s3.amazonaws.com/Cpm7GmZ83vzUDTMCV3cDDF/icons.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="//use.typekit.net/qyw4epb.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+
+    <div id="wrapper">
+      <div class="main-nav">
+        <a href="#" class='branding'>
+          <img src="images/logo.svg">
+        </a>
+
+        <ul class="sidemenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <h1>SlickNav v1.0.2</h1><h2>Responsive Mobile Menu jQuery Plugin</h2><h3><a href="http://slicknav.com">SlickNav.com</a></h3><h3>Features</h3><ul>
+<li>Multi-level menu support</li>
+<li>Flexible, simple markup</li>
+<li>Cross-browser compatibility</li>
+<li>Keyboard Accessible</li>
+<li>Degrades gracefully without JavaScript</li>
+<li>Creates ARIA compliant menu</li>
+</ul>
+<hr>
+<h3>Usage</h3><h4>Include the CSS &amp; JS</h4><p>slicknav.css can be modified to fit website design</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;SlickNav/slicknav.css&quot; /&gt;
+&lt;script src=&quot;SlickNav/jquery.slicknav.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><h4>Menu Markup</h4><pre><code>&lt;ul id=&quot;menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;item 3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;item 4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h4>Initialize</h4><pre><code>&lt;script&gt;
+    $(function(){
+        $(&#39;#menu&#39;).slicknav();
+    });
+&lt;/script&gt;
+</code></pre><h3>Options</h3><pre><code>&#39;label&#39; : &#39;MENU&#39;, // Label for menu button. Use an empty string for no label.
+&#39;duplicate&#39;: true, // If true, the mobile menu is a copy of the original.
+&#39;duration&#39;: true, // The duration of the sliding animation.
+&#39;easingOpen&#39;: &#39;swing&#39;, // Easing used for open animations.
+&#39;easingClose&#39;: &#39;swing&#39; // Easing used for close animations.
+&#39;closedSymbol&#39;: &#39;&amp;#9658;&#39;, // Character after collapsed parents.
+&#39;openedSymbol&#39;: &#39;&amp;#9660;&#39;, // Character after expanded parents.
+&#39;prependTo&#39;: &#39;body&#39;, // Element, jQuery object, or jQuery selector string to prepend the mobile menu to.
+&#39;parentTag&#39;: &#39;a&#39;, // Element type for parent menu items.
+&#39;closeOnClick&#39;: false, // Close menu when a link is clicked.
+&#39;allowParentLinks&#39;: false // Allow clickable links as parent elements.
+&#39;nestedParentLinks&#39;: true // If false, parent links will be separated from the sub-menu toggle.
+&#39;showChildren&#39;: false // Show children of parent links by default.
+&#39;brand&#39;: &#39;&#39; // Add branding to menu bar.
+</code></pre><h3>Callbacks</h3><pre><code>&#39;init&#39;: function(){}, // Called after SlickNav creation
+&#39;open&#39;: function(trigger){}, // Called after menu or sub-menu opened. 
+&#39;close&#39;: function(trigger){} // Called after menu or sub-menu closed.
+</code></pre><h3>Methods</h3><pre><code>$(&#39;.menu&#39;).slicknav(&#39;toggle&#39;); // Method to toggle the menu
+$(&#39;.menu&#39;).slicknav(&#39;open&#39;); // Method to open the menu
+$(&#39;.menu&#39;).slicknav(&#39;close&#39;); // Method to close the menu
+</code></pre><p>Without any additional configuration, both the original and mobile menus will be displayed. It is recommended to use media queries to hide the original menu and display the mobile menu when appropriate. Modernizr or similar can be used for graceful degradation.</p>
+<p>For example:</p>
+<pre><code>.slicknav_menu {
+    display:none;
+}
+
+@media screen and (max-width: 40em) {
+    /* #menu is the original menu */
+    .js #menu {
+        display:none;
+    }
+
+    .js .slicknav_menu {
+        display:block;
+    }
+}
+</code></pre><p>More examples at <a href="http://slicknav.com">SlickNav.com</a></p>
+<h3>Browser Support</h3><ul>
+<li>Chrome</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Opera</li>
+<li>IE7+</li>
+<li>Android Browser</li>
+<li>iOS Safari</li>
+</ul>
+    </div>
+
+    <!-- build:js scripts/main.js -->
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/slicknav/jquery.slicknav.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+  </body>
+</html>

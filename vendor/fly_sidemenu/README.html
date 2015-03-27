@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Baltimore Scrap Corp</title>
+
+    <!-- build:css styles/main.css -->
+    <link href="vendor/normalize-css/normalize.css" rel="stylesheet">
+    <link href="vendor/slicknav/slicknav.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <link href="https://fontastic.s3.amazonaws.com/Cpm7GmZ83vzUDTMCV3cDDF/icons.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="//use.typekit.net/qyw4epb.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+
+    <div id="wrapper">
+      <div class="main-nav">
+        <a href="#" class='branding'>
+          <img src="images/logo.svg">
+        </a>
+
+        <ul class="sidemenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <h1>Fly Side Menu by Pete R.</h1><p>Recreate an Airbnb iOS7 App Menu Animation using CSS3 and jQuery
+Created by <a href="http://www.thepetedesign.com">Pete R.</a>, Founder of <a href="http://www.bucketlistly.com">BucketListly</a></p>
+<p><a href="http://www.thepetedesign.com/demos/fly_sidemenu_demo.html"><img src="http://www.thepetedesign.com/images/fly_sidemenu_image.png" alt="Fly Side Menu" title="Fly Side Menu"></a></p>
+<h2>Demo</h2><p><a href="http://www.thepetedesign.com/demos/fly_sidemenu_demo.html">View demo</a></p>
+<h2>Compatibility</h2><p>Modern browsers such as Chrome, Firefox, and Safari on both desktop and smartphones have been tested. I have not tested this on IE.</p>
+<h2>Basic Usage</h2><p>Fly Side Menu is a script that will recreate the impressive animation you see on Airbnb&#39;s new iOS7 app using jQuery and CSS3. In additional to that, I&#39;ve also added a few more options for you guys to play around with.</p>
+<p>To add this to your website, make sure you&#39;ve included the latest jQuery library together with <code>jquery.fly_sidemenu.js</code> and <code>fly_sidemenu.css</code> into your document&#39;s <code>&lt;head&gt;</code>, and make sure your HTML markup are as follows:</p>
+<pre><code class="language-html">&lt;body&gt;
+  ..
+  &lt;ul class=&quot;sidemenu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.bucketlistly.com&quot;&gt;BucketListly&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.mycolorscreen.com&quot;&gt;MyColorScreen&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.thepetedesign.com&quot;&gt;The Pete Design&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.thepetedesign.com/#design&quot;&gt;Free jQuery Plugins&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.blog.bucketlistly.com&quot;&gt;My Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  ..
+&lt;/body&gt;
+</code></pre>
+<p>Note that your content inside this list will be displayed inside the sidebar. This can be placed anywhere you like on the page. Once that is done, simply call the function like this:</p>
+<pre><code class="language-javascript">  $(&quot;.sidemenu&quot;).fly_sidemenu({
+    btnContent: &quot;=&quot;, // This option let you define what appears inside the side menu button. You can add your custom icon here. This option accepts all HTML tags. The default value is &quot;=&quot; string.
+    position: &quot;left&quot;, // This option will let you define where the sidebar will appear on the page. Available options are &quot;top&quot;, &quot;left&quot;, &quot;right&quot;, &quot;bottom&quot;. The default value is &quot;left&quot;
+    customSelector: &quot;li&quot;, // In case you do not want to use lists, simply define your own css selector here. The default value is &quot;li&quot;.
+    hideButton: false // You can disable the auto creation of toggle button by changing this to true. The default value is false.
+  });
+</code></pre>
+<h2>Public Method</h2><h3>$.fn.toggleMenu()</h3><p>With this plugin, you can toggle the open/close animation programmatically by calling the toggleMenu function like this:</p>
+<pre><code class="language-javascript">$(&quot;.sidemenu&quot;).toggleMenu();
+</code></pre>
+<p>Now you will have a similar kick ass side menu animation like you see on the AirBnb&#39;s iOS7 app. Stay tuned for more updates.</p>
+<p>If you want to see more of my plugins, visit <a href="http://www.thepetedesign.com/#design">The Pete Design</a>, or follow me on <a href="http://www.twitter.com/peachananr">Twitter</a> and <a href="http://www.github.com/peachananr">Github</a>.</p>
+<h2>Other Resources</h2><ul>
+<li><a href="http://www.onextrapixel.com/2013/12/11/recreating-the-awesome-airbnb-ios7-menu-animation-for-the-web/">Tutorial</a></li>
+</ul>
+    </div>
+
+    <!-- build:js scripts/main.js -->
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/slicknav/jquery.slicknav.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+  </body>
+</html>
