@@ -1,0 +1,98 @@
+$font-family: "proxima-nova";
+$font-family-alt: "clarendon-text-pro";
+
+$orange: #e25125;
+
+body { 
+  margin: 0; 
+  padding: 0; 
+  background: #e55027; 
+  color: #393939; 
+  font-family: $font-family; 
+}
+
+body, html, .fsm-wrapper, .fsm-container {
+  height: 100%;
+}
+
+a {
+  color: $orange;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5 { 
+  margin: 0; 
+  padding: 0; 
+
+  small {
+    display: block;
+  }
+}
+
+h1, h2 {
+  font-family: $font-family-alt;
+  font-size: 68px;
+  line-height: 70px;
+
+  small { font-size: 40px; margin-top: -15px; }
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 100;
+  padding-top: 16px;
+  color: #60777a;
+}
+
+h4 {
+  color: $orange;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+p {
+  padding-left: 16px; 
+
+}
+
+.lead {
+  padding-left: 12px;
+  border-left: 4px solid $orange;
+}
+
+.branding {
+  z-index: 100;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  width: 200px;
+}
+
+.slicknav_menu {
+  position: fixed;
+  z-index: 200;
+  right: 0;
+  right: 10px;
+  top: 20px;
+  background: none;
+}
+
+.slicknav_nav {
+  a { color: black; &:hover { text-decoration: none; }}
+}
+
+.slicknav_btn {
+  background: $orange;
+  &, * { text-shadow: none !important; box-shadow: none !important; }
+}
+
+.sidemenu {
+  display: none;
+}
+
+@import "scenes";
+@import "content-sections";
