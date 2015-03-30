@@ -1,1 +1,1 @@
-npm install && bower install && harp server app
+npm install && bower install && harp server app & pause
