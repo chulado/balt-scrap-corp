@@ -39,6 +39,8 @@ h1, h2 {
   line-height: 70px;
 
   small { font-size: 40px; margin-top: -15px; }
+
+  x-small { font-size: 10px; margin-top: 0; line-height: 10px;}
 }
 
 h3 {
@@ -56,13 +58,14 @@ h4 {
 
 p {
   padding-left: 16px; 
-  font-size: 14px;
+  font-size: 16px;
 
 }
 
 .lead {
   padding-left: 12px;
   border-left: 4px solid $orange;
+  font-size: 18px;
 }
 
 .branding {
