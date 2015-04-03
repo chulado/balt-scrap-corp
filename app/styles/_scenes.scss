@@ -13,9 +13,9 @@ $numScenes: 5;
 .scenes, .scenes-static-assets {
   margin: 0; padding: 0;
 
-  .scene, .layer, img { margin: 0; padding: 0; }
+  .scene, .layer, .layer-container { margin: 0; padding: 0; }
 
-  .layer {
+  .layer-container {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0; overflow: hidden;
   }
@@ -26,7 +26,7 @@ $numScenes: 5;
     height: 100%;
   }
 
-  .layer img {
+  .layer {
     // some quick defaults
     width: 100%;
     display: block;
@@ -35,15 +35,15 @@ $numScenes: 5;
     right: 0;
   }
 
-  .layer {
+  .layer-container {
     z-index: +1;
-    &.bottom img {
+    &.bottom .layer {
       bottom: 0;
     }
-    &.bottom-center img {
+    &.bottom-center .layer {
       bottom: 50%;
     }
-    &.top img {
+    &.top .layer {
       top: 0;
     }
 
@@ -52,7 +52,7 @@ $numScenes: 5;
     }
   }
 
-  .crane-topper img  {
+  .crane-topper .layer  {
     width: auto;
     top: 0;
     height: 40%;
@@ -62,20 +62,20 @@ $numScenes: 5;
     transform: translateX(-50%);
   }
 
-  .cranes-mini img {
+  .cranes-mini .layer {
     width: 80%;
     left: 4%;
     right: auto;
   }
 
-  .car-piles-large img {
+  .car-piles-large .layer {
     width: auto;
     left: auto;
     right: 0;
     height: 30%;
   }
 
-  .car-crushed img {
+  .car-crushed .layer {
     width: auto;
     height: 20%;
     left: 50%;
@@ -83,7 +83,7 @@ $numScenes: 5;
     transform: translateX(-50%);
   }
 
-  .crusher img {
+  .crusher .layer {
     width: 55%;
     left: auto;
   }
@@ -100,5 +100,22 @@ $numScenes: 5;
 
   .city-light, .city-dark {
     opacity: 0.6;
+  }
+}
+
+.scene-about {
+  .crane-main .layer {
+    width: 70%;
+    left: auto;
+    right: -37%;
+    top: -40%;
+  }
+}
+
+.scene-service {
+  .crane-main .layer {
+    width: 39%;
+    top: -15%;
+    left: 16%;
   }
 }
