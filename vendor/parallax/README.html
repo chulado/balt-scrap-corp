@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Baltimore Scrap Corp</title>
+
+    <!-- build:css styles/main.css -->
+    <link href="vendor/normalize-css/normalize.css" rel="stylesheet">
+    <link href="vendor/slicknav/slicknav.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <link href="https://fontastic.s3.amazonaws.com/Cpm7GmZ83vzUDTMCV3cDDF/icons.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="//use.typekit.net/qyw4epb.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+  </head>
+  <body>
+
+    <div id="wrapper">
+      <div class="main-nav">
+        <a href="#" class='branding'>
+          <img src="images/logo.svg">
+        </a>
+
+        <ul class="sidemenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <h1>Parallax.js</h1><p>Parallax Engine that reacts to the orientation of a smart device. Where no gyroscope or motion detection hardware is available, the position of the cursor is used instead.</p>
+<p>Check out this <strong><a href="http://wagerfield.github.com/parallax/">demo</a></strong> to see it in action!</p>
+<h2>Setup</h2><p>Create a list of elements giving each item that you want to move within your parallax scene a class of <code>layer</code> and a <code>data-depth</code> attribute specifying its depth within the scene. A depth of <strong>0</strong> will cause the layer to remain stationary, and a depth of <strong>1</strong> will cause the layer to move by the total effect of the calculated motion. Values inbetween <strong>0</strong> and <strong>1</strong> will cause the layer to move by an amount relative to the supplied ratio.</p>
+<pre><code class="language-html">&lt;ul id=&quot;scene&quot;&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;0.00&quot;&gt;&lt;img src=&quot;layer1.png&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;0.20&quot;&gt;&lt;img src=&quot;layer2.png&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;0.40&quot;&gt;&lt;img src=&quot;layer3.png&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;0.60&quot;&gt;&lt;img src=&quot;layer4.png&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;0.80&quot;&gt;&lt;img src=&quot;layer5.png&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;1.00&quot;&gt;&lt;img src=&quot;layer6.png&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>To kickoff a <strong>Parallax</strong> scene, select your parent DOM Element and pass it to the <strong>Parallax</strong> constructor.</p>
+<pre><code class="language-javascript">var scene = document.getElementById(&#39;scene&#39;);
+var parallax = new Parallax(scene);
+</code></pre>
+<h2>Understanding Layer Motion Calculations</h2><p>The amount of motion that each layer moves by depends on 3 contributing factors:</p>
+<ol>
+<li>The <code>scalarX</code> and <code>scalarY</code> values (see <a href="#behaviours">Behaviours</a> below for configuration)</li>
+<li>The dimensions of the parent DOM element</li>
+<li>The <code>depth</code> of a layer within a parallax scene (specified by it&#39;s <code>data-depth</code> attribute)</li>
+</ol>
+<p>The calculation for this motion is as follows:</p>
+<pre><code class="language-coffeescript">xMotion = parentElement.width  * (scalarX / 100) * layerDepth
+yMotion = parentElement.height * (scalarY / 100) * layerDepth
+</code></pre>
+<p>So for a layer with a <code>data-depth</code> value of <code>0.5</code> within a scene that has both the <code>scalarX</code> and <code>scalarY</code> values set to <code>10</code> ( <em>the default</em> ) where the containing scene element is <code>1000px x 1000px</code>, the total motion of the layer in both <code>x</code> and <code>y</code> would be:</p>
+<pre><code class="language-coffeescript">xMotion = 1000 * (10 / 100) * 0.5 = 50 # 50px of positive and negative motion in x
+yMotion = 1000 * (10 / 100) * 0.5 = 50 # 50px of positive and negative motion in y
+</code></pre>
+<h2>Behaviours</h2><p>There are a number of behaviours that you can setup for any given <strong>Parallax</strong> instance. These behaviours can either be specified in the markup via data attributes or in JavaScript via the constructor and API.</p>
+<table>
+<thead>
+<tr>
+<th>Behaviour</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>relativeInput</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td>Specifies whether or not to use the coordinate system of the <code>element</code> passed to the parallax <code>constructor</code>. <strong>Mouse input only.</strong></td>
+</tr>
+<tr>
+<td><code>clipRelativeInput</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td>Specifies whether or not to clip the mouse input to the bounds of the <code>element</code> passed to the parallax <code>constructor</code>. <strong>Mouse input only.</strong></td>
+</tr>
+<tr>
+<td><code>calibrate-x</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td>Specifies whether or not to cache &amp; calculate the motion relative to the initial <code>x</code> axis value on initialisation.</td>
+</tr>
+<tr>
+<td><code>calibrate-y</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td>Specifies whether or not to cache &amp; calculate the motion relative to the initial <code>y</code> axis value on initialisation.</td>
+</tr>
+<tr>
+<td><code>invert-x</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>true</code> moves layers in opposition to the device motion, <code>false</code> slides them away.</td>
+</tr>
+<tr>
+<td><code>invert-y</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>true</code> moves layers in opposition to the device motion, <code>false</code> slides them away.</td>
+</tr>
+<tr>
+<td><code>limit-x</code></td>
+<td><code>number</code> or <code>false</code></td>
+<td>A numeric value limits the total range of motion in <code>x</code>, <code>false</code> allows layers to move with complete freedom.</td>
+</tr>
+<tr>
+<td><code>limit-y</code></td>
+<td><code>number</code> or <code>false</code></td>
+<td>A numeric value limits the total range of motion in <code>y</code>, <code>false</code> allows layers to move with complete freedom.</td>
+</tr>
+<tr>
+<td><code>scalar-x</code></td>
+<td><code>number</code></td>
+<td>Multiplies the input motion by this value, increasing or decreasing the sensitivity of the layer motion.</td>
+</tr>
+<tr>
+<td><code>scalar-y</code></td>
+<td><code>number</code></td>
+<td>Multiplies the input motion by this value, increasing or decreasing the sensitivity of the layer motion.</td>
+</tr>
+<tr>
+<td><code>friction-x</code></td>
+<td><code>number</code> <code>0 - 1</code></td>
+<td>The amount of friction the layers experience. This essentially adds some easing to the layer motion.</td>
+</tr>
+<tr>
+<td><code>friction-y</code></td>
+<td><code>number</code> <code>0 - 1</code></td>
+<td>The amount of friction the layers experience. This essentially adds some easing to the layer motion.</td>
+</tr>
+<tr>
+<td><code>origin-x</code></td>
+<td><code>number</code></td>
+<td>The <code>x</code> origin of the mouse input. Defaults to 0.5 (the center). <code>0</code> moves the origin to the left edge, <code>1</code> to the right edge. <strong>Mouse input only.</strong></td>
+</tr>
+<tr>
+<td><code>origin-y</code></td>
+<td><code>number</code></td>
+<td>The <code>y</code> origin of the mouse input. Defaults to 0.5 (the center). <code>0</code> moves the origin to the top edge, <code>1</code> to the bottom edge. <strong>Mouse input only.</strong></td>
+</tr>
+</tbody>
+</table>
+<p>In addition to the behaviours described above, there are <strong>two</strong> methods <code>enable()</code> and <code>disable()</code> that <em>activate</em> and <em>deactivate</em> the <strong>Parallax</strong> instance respectively.</p>
+<h3>Behaviours: Data Attributes Example</h3><pre><code class="language-html">&lt;ul id=&quot;scene&quot;
+  data-calibrate-x=&quot;false&quot;
+  data-calibrate-y=&quot;true&quot;
+  data-invert-x=&quot;false&quot;
+  data-invert-y=&quot;true&quot;
+  data-limit-x=&quot;false&quot;
+  data-limit-y=&quot;10&quot;
+  data-scalar-x=&quot;2&quot;
+  data-scalar-y=&quot;8&quot;
+  data-friction-x=&quot;0.2&quot;
+  data-friction-y=&quot;0.8&quot;
+  data-origin-x=&quot;0.0&quot;
+  data-origin-y=&quot;1.0&quot;&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;0.00&quot;&gt;&lt;img src=&quot;graphics/layer1.png&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;0.20&quot;&gt;&lt;img src=&quot;graphics/layer2.png&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;0.40&quot;&gt;&lt;img src=&quot;graphics/layer3.png&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;0.60&quot;&gt;&lt;img src=&quot;graphics/layer4.png&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;0.80&quot;&gt;&lt;img src=&quot;graphics/layer5.png&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;layer&quot; data-depth=&quot;1.00&quot;&gt;&lt;img src=&quot;graphics/layer6.png&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h3>Behaviours: Constructor Object Example</h3><pre><code class="language-javascript">var scene = document.getElementById(&#39;scene&#39;);
+var parallax = new Parallax(scene, {
+  calibrateX: false,
+  calibrateY: true,
+  invertX: false,
+  invertY: true,
+  limitX: false,
+  limitY: 10,
+  scalarX: 2,
+  scalarY: 8,
+  frictionX: 0.2,
+  frictionY: 0.8,
+  originX: 0.0,
+  originY: 1.0
+});
+</code></pre>
+<h3>Behaviours: API Example</h3><pre><code class="language-javascript">var scene = document.getElementById(&#39;scene&#39;);
+var parallax = new Parallax(scene);
+parallax.enable();
+parallax.disable();
+parallax.updateLayers(); // Useful for reparsing the layers in your scene if you change their data-depth value
+parallax.calibrate(false, true);
+parallax.invert(false, true);
+parallax.limit(false, 10);
+parallax.scalar(2, 8);
+parallax.friction(0.2, 0.8);
+parallax.origin(0.0, 1.0);
+</code></pre>
+<h2>jQuery</h2><p>If you&#39;re using <strong><a href="http://jquery.com/">jQuery</a></strong> or <strong><a href="http://zeptojs.com/">Zepto</a></strong> and would prefer to
+use <strong>Parallax.js</strong> as a plugin, you&#39;re in luck!</p>
+<pre><code class="language-javascript">$(&#39;#scene&#39;).parallax();
+</code></pre>
+<h3>jQuery: Passing Options</h3><pre><code class="language-javascript">$(&#39;#scene&#39;).parallax({
+  calibrateX: false,
+  calibrateY: true,
+  invertX: false,
+  invertY: true,
+  limitX: false,
+  limitY: 10,
+  scalarX: 2,
+  scalarY: 8,
+  frictionX: 0.2,
+  frictionY: 0.8,
+  originX: 0.0,
+  originY: 1.0
+});
+</code></pre>
+<h3>jQuery: API</h3><pre><code class="language-javascript">var $scene = $(&#39;#scene&#39;).parallax();
+$scene.parallax(&#39;enable&#39;);
+$scene.parallax(&#39;disable&#39;);
+$scene.parallax(&#39;updateLayers&#39;);
+$scene.parallax(&#39;calibrate&#39;, false, true);
+$scene.parallax(&#39;invert&#39;, false, true);
+$scene.parallax(&#39;limit&#39;, false, 10);
+$scene.parallax(&#39;scalar&#39;, 2, 8);
+$scene.parallax(&#39;friction&#39;, 0.2, 0.8);
+$scene.parallax(&#39;origin&#39;, 0.0, 1.0);
+</code></pre>
+<h2>iOS</h2><p>If you are writing a <strong>native iOS application</strong> and would like to use <strong>parallax.js</strong> within a <code>UIWebView</code>, you will need to do a little bit of work to get it running.</p>
+<p><code>UIWebView</code> no longer automatically receives the <code>deviceorientation</code> event, so your native application must intercept the events from the gyroscope and reroute them to the <code>UIWebView</code>:</p>
+<ol>
+<li>Include the <strong>CoreMotion</strong> framework <code>#import &lt;CoreMotion/CoreMotion.h&gt;</code> and create a reference to the <strong>UIWebView</strong> <code>@property(nonatomic, strong) IBOutlet UIWebView *parallaxWebView;</code></li>
+<li>Add a property to the app delegate (or controller that will own the <strong>UIWebView</strong>) <code>@property(nonatomic, strong) CMMotionManager *motionManager;</code></li>
+<li>Finally, make the following calls:</li>
+</ol>
+<pre><code class="language-Objective-C">self.motionManager = [[CMMotionManager alloc] init];
+if (self.motionManager.isGyroAvailable &amp;&amp; !self.motionManager.isGyroActive) {
+  [self.motionManager setGyroUpdateInterval:0.5f]; // Set the event update frequency (in seconds)
+  [self.motionManager startGyroUpdatesToQueue:NSOperationQueue.mainQueue
+                                  withHandler:^(CMGyroData *gyroData, NSError *error) {
+    NSString *js = [NSString stringWithFormat:@&quot;parallax.onDeviceOrientation({beta:%f, gamma:%f})&quot;, gyroData.rotationRate.x, gyroData.rotationRate.y];
+    [self.parallaxWebView stringByEvaluatingJavaScriptFromString:js];
+  }];
+}
+</code></pre>
+<h2>Build</h2><blockquote>
+<p>As a prerequisite, you will need <a href="http://gulpjs.com/">gulp</a> installed: <code>npm install -g gulp</code></p>
+</blockquote>
+<pre><code>npm install
+gulp
+</code></pre><p>During development you can have gulp watch the <code>source</code> directory for changes and automatically build the <code>deploy</code> files by running:</p>
+<pre><code>gulp watch
+</code></pre><h2>Author</h2><p>Matthew Wagerfield: <a href="http://twitter.com/wagerfield">@wagerfield</a></p>
+<h2>License</h2><p>Licensed under <a href="http://www.opensource.org/licenses/mit-license.php">MIT</a>. Enjoy.</p>
+    </div>
+
+    <!-- build:js scripts/main.js -->
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/slicknav/jquery.slicknav.js"></script>
+    <script src="vendor/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="vendor/gsap/src/uncompressed/TimelineLite.js"></script>
+    <script src="vendor/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script src="vendor/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+
+    <script src="scripts/main.js"></script>
+
+    <script src="scripts/scenes/bg.js"></script>
+    <script src="scripts/scenes/home.js"></script>
+    <script src="scripts/scenes/about.js"></script>
+    <!-- endbuild -->
+
+  </body>
+</html>

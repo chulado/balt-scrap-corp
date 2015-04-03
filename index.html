@@ -186,32 +186,55 @@
 </div>
 <div class="scenes">
 
-  <ul class="scene">
-    <li class="layer bottom cranes-mini"><img src="images/scenes/cranes-mini.svg"></li> <!-- cranes -->
-    <li class="layer bottom car-piles-small"><img src="images/scenes/car-piles-1.svg"></li> <!-- car piles -->
-    <li class="layer crane-topper"><img src="images/scenes/crane-topper.svg"></li> <!-- large crane -->
+  <ul class="scene scene-home">
+    <li class="layer-container bottom cranes-mini">
+      <img class="layer" data-depth="1.00" src="images/scenes/cranes-mini.svg" data-layer="1">
+    </li> <!-- cranes -->
+
+    <li class="layer-container bottom car-piles-small">
+      <img class="layer" data-depth="1.50" src="images/scenes/car-piles-1.svg" data-layer="2">
+    </li> <!-- car piles -->
+
+    <li class="layer-container crane-topper">
+      <img class="layer" data-depth="1.50" src="images/scenes/crane-topper.svg">
+    </li> <!-- large crane -->
   </ul>
 
-  <ul class="scene">
-    <li class="layer bottom car-piles-large"><img src="images/scenes/cars-pile-2.svg"></li>
-    <li class="layer bottom car-crushed"><img src="images/scenes/car-crushed.svg"></li>
+  <ul class="scene scene-about">
+    <li class="layer-container bottom car-piles-large">
+      <img class="layer" data-depth="1.00" src="images/scenes/cars-pile-2.svg" data-layer="1">
+    </li>
+
+    <li class="layer-container crane-main">
+      <img class="layer" data-depth="1.50" src="images/scenes/crane-main-flipped.svg" data-layer="1">
+    </li> <!-- main crane -->
   </ul>
 
-  <ul class="scene">
-    <li class="layer bottom crusher"><img src="images/scenes/machine.svg"></li>
+  <ul class="scene scene-service">
+    <li class="layer-container bottom crusher">
+      <img class="layer" data-depth="1.00" src="images/scenes/machine.svg" data-layer="1">
+    </li>
 
-    <!-- <li class="layer crane-main"><img src="images/scenes/crane-main.svg"></li> --> <!-- main crane -->
+    <li class="layer-container crane-main">
+      <img class="layer" data-depth="1.00" src="images/scenes/crane-main.svg" data-layer="1">
+    </li> <!-- main crane -->
   </ul>
 
-  <ul class="scene">
-    <li class="layer bottom factory"><img src="images/scenes/factory.svg"></li>
+  <ul class="scene scene-location">
+    <li class="layer-container bottom factory">
+      <img class="layer" data-depth="1.00" src="images/scenes/factory.svg" data-layer="1">
+    </li>
   </ul>
 
 </div>
 
 <ul class="scenes-static-assets">
-  <li class="layer bottom city city-light"><img src="images/scenes/city-1.svg"></li>
-  <li class="layer bottom city city-dark"><img src="images/scenes/city-2.svg"></li>
+  <li class="layer-container bottom city city-light">
+    <img class="layer" data-depth="0.00" src="images/scenes/city-1.svg">
+  </li>
+  <li class="layer-container bottom city city-dark">
+    <img class="layer" data-depth="0.00" src="images/scenes/city-2.svg">
+  </li>
 </ul>
     </div>
 
