@@ -1,10 +1,8 @@
-$numScenes: 5;
-
 .scenes {
   background: #d0dce1;
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: 42px;
   left: 0;
   width: $numScenes * 100vw;
   display: flex;
@@ -118,4 +116,18 @@ $numScenes: 5;
     top: -15%;
     left: 16%;
   }
+}
+
+.content-section-teaser {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  line-height: 42px;
+  height: 42px;
+  font-size: 18px;
+  font-weight: 600;
+  background: $orange;
+  color: white;
+  text-align: center;
+
+  a { color: white; }
 }
