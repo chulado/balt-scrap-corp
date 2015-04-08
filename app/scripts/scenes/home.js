@@ -9,8 +9,8 @@ new ScrollMagic.Scene({
     TweenMax.fromTo(
       ".scene-home .crane-topper img",
       1,
-      { y: -100 },
-      { y: 0 }
+      { y: 0 },
+      { y: -100 }
     )
   )
   .addTo(controller); // assign the scene to the controller

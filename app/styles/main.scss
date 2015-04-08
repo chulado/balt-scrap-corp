@@ -4,6 +4,8 @@ $font-family-alt: "clarendon-text-pro";
 $orange: #e25125;
 $numScenes: 5;
 
+$screen-sm: 800px;
+
 body { 
   margin: 0; 
   padding: 0; 
@@ -76,34 +78,40 @@ li { font-size: 18px;}
 
 .branding {
   z-index: 100;
-  position: fixed;
-  top: 5%;
-  left: 5%;
-  width: 200px;
+  width: 150px;
+  display: inline-block;
+
+  img { margin-bottom: -5px; }
 }
 
-.slicknav_menu {
+.main-nav {
   position: fixed;
-  z-index: 200;
+  top: 0;
+  left: 0;
   right: 0;
-  right: 10px;
-  top: 20px;
-  background: none;
-}
+  padding: 20px;
+  background: rgba(57, 57, 57, 0.9);
+  z-index: 1000;
 
-.slicknav_nav {
-  a { color: black; &:hover { text-decoration: none; }}
-}
-
-.slicknav_btn {
-  background: $orange;
-  &, * { text-shadow: none !important; box-shadow: none !important; }
+  display: flex;
+  align-items: center;
 }
 
 .sidemenu {
-  display: none;
-}
+  list-style: none;
+  margin: 0;
+  display: inline-block;
 
+  li { display: inline-block; padding-right: 12px; }
+  a {
+    display: inline-block;
+    color: white;
+
+    &.active {
+      border-bottom: 2px solid $orange;
+    }
+  }
+}
 
 @import "scenes";
 @import "content-sections";

@@ -31,14 +31,18 @@ var keysDown = [40, 34, 32, 39];
 // window.onmousewheel = document.onmousewheel = wheel;
 
 
-// Sidemenu
-$('.sidemenu').slicknav({
-    prependTo:'.main-nav'
-});
-
 $("a[href^=#]").click(function(e){
-  if($($(e.target).attr("href")).length) {
+  var $target = $($(e.target).attr("href"));
+  if($target.length) {
     e.preventDefault();
-    $('html, body').animate({scrollLeft: $($(e.target).attr("href")).offset().left });
+    
+    $(".active-section").removeClass("active-section");
+    $("a[href^=#]").removeClass("active");
+
+    $('html, body').animate({scrollLeft: $target.offset().left }, 500, function() {
+      $target.addClass("active-section");
+      $("a[href='"+$(e.target).attr("href")+"']").addClass("active");
+
+    });
   }
 });
