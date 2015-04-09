@@ -35,6 +35,14 @@
   -webkit-overflow-scrolling: touch;
 }
 
+@media(max-width: $screen-sm) {
+  .content-section-inner {
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
 .content-section-container-half-left {
 
 }

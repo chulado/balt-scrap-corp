@@ -111,10 +111,14 @@
 }
 
 .scene-service {
-  .crane-main .layer {
-    width: 39%;
-    bottom: 70%;
-    left: 16%;
+  .crane-main {
+    z-index: 0;
+    
+    .layer {
+      width: 39%;
+      bottom: 70%;
+      left: 16%;
+    }
   }
 }
 
