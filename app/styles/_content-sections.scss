@@ -31,7 +31,8 @@
 }
 
 .active-section .content-section-inner {
-  overflow-y: auto;
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
 }
 
 .content-section-container-half-left {

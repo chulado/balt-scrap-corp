@@ -30,19 +30,32 @@ var keysDown = [40, 34, 32, 39];
 // }
 // window.onmousewheel = document.onmousewheel = wheel;
 
+var isActivating = false;
+function activate($target) {
+  if(isActivating) return;
+
+  $(".active-section").removeClass("active-section");
+  $("a[href^=#]").removeClass("active");
+
+  $(".active-section").removeClass("active-section");
+  $("a[href^=#]").removeClass("active");
+
+  isActivating = true;
+  $('html, body').animate({scrollLeft: $target.offset().left, scrollTop: $target.offset().top }, 500, function() {
+    $("a[href='#"+$target.attr("id")+"']").addClass("active");
+    $target.addClass("active-section");
+    isActivating = false;
+  });
+}
+
 
 $("a[href^=#]").click(function(e){
   var $target = $($(e.target).attr("href"));
   if($target.length) {
     e.preventDefault();
     
-    $(".active-section").removeClass("active-section");
-    $("a[href^=#]").removeClass("active");
-
-    $('html, body').animate({scrollLeft: $target.offset().left }, 500, function() {
-      $target.addClass("active-section");
-      $("a[href='"+$(e.target).attr("href")+"']").addClass("active");
-
-    });
+    activate($target);
+    
   }
 });
+
