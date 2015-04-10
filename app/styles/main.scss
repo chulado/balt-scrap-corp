@@ -6,6 +6,31 @@ $numScenes: 5;
 
 $screen-sm: 800px;
 
+// importing just selective bootstrap things:
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/clearfix";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/center-block";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/hide-text";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/nav-vertical-align";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/forms";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/vendor-prefixes";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/tab-focus";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/mixins/border-radius";
+
+
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/forms";
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+
+
+@import "../vendor/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
+//@import "../vendor/bootstrap-sass/assets/stylesheets/nav";
+
+.icon-bar {
+  background: white;
+}
+
 body { 
   margin: 0; 
   padding: 0; 
@@ -44,9 +69,14 @@ h1, h2 {
   font-size: 68px;
   line-height: 70px;
 
-  small { font-size: 40px; margin-top: -15px; }
+  small { font-size: 40px; margin-top: -15px; line-height: 45px; }
 
   x-small { font-size: 10px; margin-top: 0; line-height: 10px;}
+
+  @media(max-width: $screen-sm) {
+    font-size: 58px;
+    small { font-size: 30px; }
+  }
 }
 
 h3 {
@@ -79,6 +109,7 @@ li { font-size: 18px;}
 .branding {
   z-index: 100;
   width: 150px;
+  margin-top: 10px;
   display: inline-block;
 
   img { margin-bottom: -5px; }
@@ -88,20 +119,34 @@ li { font-size: 18px;}
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  padding: 20px;
+  width: 100vw;
   background: rgba(57, 57, 57, 0.9);
   z-index: 1000;
+  padding: 0;
 
   display: flex;
   align-items: center;
 
   @media(max-width: $screen-sm) {
     background: rgba(57, 57, 57, 1);
+    display: block;
   }
 }
 
-.sidemenu {
+.navbar-toggle {
+  width: 44px;
+  padding: 0;
+  margin: 0;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.navbar-nav {
   list-style: none;
   margin: 0;
   display: inline-block;
@@ -114,6 +159,26 @@ li { font-size: 18px;}
     &.active {
       border-bottom: 2px solid $orange;
     }
+  }
+}
+
+.navbar-nav > li > a {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.navbar-collapse.in {
+  clear: both;
+  width: 100vw;
+}
+
+@media(max-width: $screen-sm) {
+  .navbar-nav {
+    display: block;
+    padding: 0;
+    width: 100%;
+    li { display: block; width: 100%; }
+    a { }
   }
 }
 

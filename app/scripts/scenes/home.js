@@ -3,14 +3,14 @@ var controller = new ScrollMagic.Controller({vertical: false});
 
 // Crane Toppper
 new ScrollMagic.Scene({
-    duration: function() { return $(window).width() }
+    duration: 0,
   })
   .setTween(
     TweenMax.fromTo(
       ".scene-home .crane-topper img",
-      1,
+      2,
       { y: 0 },
-      { y: -100 }
+      { y: -50 }
     )
   )
   .addTo(controller); // assign the scene to the controller

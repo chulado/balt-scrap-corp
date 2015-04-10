@@ -71,6 +71,11 @@
     left: auto;
     right: 0;
     height: 30%;
+
+    @media(max-width: $screen-sm) {
+      height: auto;
+      width: 100%;
+    }
   }
 
   .car-crushed .layer {
@@ -118,6 +123,10 @@
       width: 39%;
       bottom: 70%;
       left: 16%;
+
+      @media(max-width: $screen-sm) {
+        bottom: 88%;
+      }
     }
   }
 }
