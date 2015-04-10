@@ -4,13 +4,13 @@ var controller = new ScrollMagic.Controller({vertical: false});
 // Crane Toppper
 new ScrollMagic.Scene({
     triggerElement: ".scene-about",
-    duration: function() { return $(window).width() * 1.5 }
+    duration: 0
   })
   .setTween(
     TweenMax.fromTo(
 
       ".scene-about .crane-main .layer",
-      1,
+      2,
       { y: "+300%" },
       { y: "-200%" }
     )
@@ -20,15 +20,15 @@ new ScrollMagic.Scene({
   // Crane Toppper
   new ScrollMagic.Scene({
       triggerElement: ".scene-service",
-      duration: function() { return $(window).width() * 1.5 }
+      duration: 0
     })
     .setTween(
       TweenMax.fromTo(
 
         ".scene-service .crane-main .layer",
-        1,
+        2,
         { y: "-100%" },
-        { y: "+100%" }
+        { y: "+75%" }
       )
     )
     .addTo(controller); // assign the scene to the controller

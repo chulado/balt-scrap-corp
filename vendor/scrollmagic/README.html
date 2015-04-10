@@ -27,18 +27,29 @@
   <body>
 
     <div id="wrapper">
-      <div class="main-nav">
-        <a href="#home" class='branding'>
-          <img src="images/logo.svg">
-        </a>
+      <div class="main-nav navbar navbar-fixed">
+        <div class="navbar-heading">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
 
-        <ul class="sidemenu">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#service">Service</a></li>
-          <li><a href="#locations">Locations</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+          <a href="#home" class='branding navbar-brand'>
+            <img src="images/logo.svg">
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
       </div>
       
       <h1>ScrollMagic <a href="https://github.com/janpaepke/ScrollMagic/blob/master/CHANGELOG.md" class="version" title="Whats New?">v2.0.2</a> <a href="https://travis-ci.org/janpaepke/ScrollMagic"><img src="https://api.travis-ci.org/janpaepke/ScrollMagic.svg?branch=master" alt="Build Status"></a></h1><h3>The javascript library for magical scroll interactions. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8BJC8B58XHKLL" title="Shut up and take my money!"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt="Donate" title="Shut up and take my money!"></a></h3><p>ScrollMagic helps you to easily react to the user&#39;s current scroll position.<br>It&#39;s the perfect library for you, if you want to ...</p>
@@ -127,6 +138,8 @@ new ScrollMagic.Scene({
     <script src="vendor/gsap/src/uncompressed/TimelineLite.js"></script>
     <script src="vendor/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script src="vendor/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+
+    <script src="vendor/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
 
     <script src="scripts/main.js"></script>
 

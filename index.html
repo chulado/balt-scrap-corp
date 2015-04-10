@@ -24,18 +24,29 @@
   <body>
 
     <div id="wrapper">
-      <div class="main-nav">
-        <a href="#home" class='branding'>
-          <img src="images/logo.svg">
-        </a>
+      <div class="main-nav navbar navbar-fixed">
+        <div class="navbar-heading">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
 
-        <ul class="sidemenu">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#service">Service</a></li>
-          <li><a href="#locations">Locations</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+          <a href="#home" class='branding navbar-brand'>
+            <img src="images/logo.svg">
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
       </div>
       
       <div class="content-sections">

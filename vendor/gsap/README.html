@@ -27,18 +27,29 @@
   <body>
 
     <div id="wrapper">
-      <div class="main-nav">
-        <a href="#home" class='branding'>
-          <img src="images/logo.svg">
-        </a>
+      <div class="main-nav navbar navbar-fixed">
+        <div class="navbar-heading">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
 
-        <ul class="sidemenu">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#service">Service</a></li>
-          <li><a href="#locations">Locations</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+          <a href="#home" class='branding navbar-brand'>
+            <img src="images/logo.svg">
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
       </div>
       
       <h1>GSAP (GreenSock Animation Platform)</h1><h4>Professional-Grade HTML5 Animation</h4><p>GSAP is a suite of tools for scripted, high-performance HTML5 animations that work in all major browsers. No other library delivers such advanced sequencing, API efficiency, and tight control. Stop wrestling with cumbersome CSS animations, stuttery jQuery.animate() calls, or a system that limits your creativity. Use animation to tell a story in a rich way rather than settling for a few fades and slides.</p>
@@ -61,6 +72,8 @@
     <script src="vendor/gsap/src/uncompressed/TimelineLite.js"></script>
     <script src="vendor/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script src="vendor/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+
+    <script src="vendor/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
 
     <script src="scripts/main.js"></script>
 
