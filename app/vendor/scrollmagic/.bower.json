@@ -1,8 +1,8 @@
 {
   "name": "scrollmagic",
-  "version": "2.0.2",
+  "version": "2.0.5",
   "description": "The javascript library for magical scroll interactions.",
-  "homepage": "http://janpaepke.github.io/ScrollMagic/",
+  "homepage": "http://ScrollMagic.io",
   "repository": {
     "type": "git",
     "url": "https://github.com/janpaepke/ScrollMagic.git"
@@ -28,7 +28,9 @@
     "progress",
     "parallax",
     "events",
-    "classes"
+    "classes",
+    "jquery-plugin",
+    "ecosystem:jquery"
   ],
   "ignore": [
     "**/.*",
@@ -49,14 +51,13 @@
     "MIT",
     "GPL-3.0+"
   ],
-  "_release": "2.0.2",
+  "_release": "2.0.5",
   "_resolution": {
     "type": "version",
-    "tag": "v2.0.2",
-    "commit": "0541cf3496c30382c259e2f5edb72a4b08f7cf54"
+    "tag": "v2.0.5",
+    "commit": "ad8b4c280d15777e0a8e6dece58763a9e622fdfa"
   },
   "_source": "git://github.com/janpaepke/ScrollMagic.git",
   "_target": "~2.0.2",
-  "_originalSource": "scrollmagic",
-  "_direct": true
+  "_originalSource": "scrollmagic"
 }

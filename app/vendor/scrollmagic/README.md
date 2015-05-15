@@ -1,4 +1,4 @@
-# ScrollMagic <a href='https://github.com/janpaepke/ScrollMagic/blob/master/CHANGELOG.md' class='version' title='Whats New?'>v2.0.2</a> [![Build Status](https://api.travis-ci.org/janpaepke/ScrollMagic.svg?branch=master)](https://travis-ci.org/janpaepke/ScrollMagic) 
+# ScrollMagic <a href='https://github.com/janpaepke/ScrollMagic/blob/master/CHANGELOG.md' class='version' title='Whats New?'>v2.0.5</a> [![Build Status](https://api.travis-ci.org/janpaepke/ScrollMagic.svg?branch=master)](https://travis-ci.org/janpaepke/ScrollMagic) 
 
 ### The javascript library for magical scroll interactions. [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif "Shut up and take my money!")](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8BJC8B58XHKLL "Shut up and take my money!")
 
@@ -12,7 +12,7 @@ It's the perfect library for you, if you want to ...
 * create an infinitely scrolling page (ajax load of additional content).
 * add callbacks at specific scroll positions or while scrolling past a specific section, passing a progress parameter.
 
-Check out [the demo page](http://janpaepke.github.com/ScrollMagic), browse [the examples](http://janpaepke.github.com/ScrollMagic/examples/index.html) or read [the documentation](http://janpaepke.github.com/ScrollMagic/docs/index.html) to get started.
+Check out [the demo page](http://scrollmagic.io), browse [the examples](http://scrollmagic.io/examples/index.html) or read [the documentation](http://scrollmagic.io/docs/index.html) to get started.
 
 ## About the Library
 
@@ -56,7 +56,7 @@ git clone git://github.com/janpaepke/ScrollMagic.git
 ```
 
 __Option 2: Bower__  
-ScrollMagic is also available on bower and will only install the necessary source code, ignoring all example and documentation files.  
+ScrollMagic is also [available on bower](http://bower.io/search/?q=scrollmagic) and will only install the necessary source code, ignoring all example and documentation files.  
 Please mind that since they are not core dependencies, you will have to add frameworks like GSAP, jQuery or Velocity manually, should you choose to use them.
 
 ```bash
@@ -64,7 +64,7 @@ bower install scrollmagic
 ```
 
 __Option 3: npm__  
-If you prefer the node package manager, feel free to use it.  
+If you prefer the [node package manager](https://www.npmjs.com/package/scrollmagic), feel free to use it.  
 Keep in mind that like with bower non-crucial files will be ignored (see above).
 
 ```bash
@@ -75,15 +75,15 @@ __Option 4: CDN__
 If you don't want to host ScrollMagic yourself, you can include it from [cdnjs](https://cdnjs.com/libraries/scrollmagic):
 
 ```
-http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js
+http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js
 ```
 
 All plugins and uncompressed files are also available on cdnjs.  
 For example:
 
 ```
-http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.js
-http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js
+http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js
+http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js
 ```
 
 ## Installation
@@ -122,7 +122,7 @@ var controller = new ScrollMagic.Controller();
 
 // create a scene
 new ScrollMagic.Scene({
-		duration: 100,	// the scne should last for a scroll distance of 100px
+		duration: 100,	// the scene should last for a scroll distance of 100px
 		offset: 50		// start this scene after scrolling for 50px
 	})
 	.setPin("#my-sticky-element") // pins the element for the the scene's duration
