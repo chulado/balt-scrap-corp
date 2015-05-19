@@ -52,7 +52,7 @@
         </div>
       </div>
       
-      <h1>SlickNav v1.0.2</h1><h2>Responsive Mobile Menu jQuery Plugin</h2><h3><a href="http://slicknav.com">SlickNav.com</a></h3><h3>Features</h3><ul>
+      <h1>SlickNav v1.0.3</h1><h2>Responsive Mobile Menu jQuery Plugin</h2><h3><a href="http://slicknav.com">SlickNav.com</a></h3><h3>Features</h3><ul>
 <li>Multi-level menu support</li>
 <li>Flexible, simple markup</li>
 <li>Cross-browser compatibility</li>
@@ -88,10 +88,14 @@
 &#39;allowParentLinks&#39;: false // Allow clickable links as parent elements.
 &#39;nestedParentLinks&#39;: true // If false, parent links will be separated from the sub-menu toggle.
 &#39;showChildren&#39;: false // Show children of parent links by default.
+&#39;removeIds&#39;: false // Remove IDs from all menu elements. Defaults to true if duplicate is true.
+&#39;removeClasses&#39;: false // Remove classes from all menu elements.
 &#39;brand&#39;: &#39;&#39; // Add branding to menu bar.
 </code></pre><h3>Callbacks</h3><pre><code>&#39;init&#39;: function(){}, // Called after SlickNav creation
-&#39;open&#39;: function(trigger){}, // Called after menu or sub-menu opened. 
-&#39;close&#39;: function(trigger){} // Called after menu or sub-menu closed.
+&#39;beforeOpen&#39;: function(trigger){}, // Called before menu or sub-menu opened. 
+&#39;beforeClose&#39;: function(trigger){} // Called before menu or sub-menu closed.
+&#39;afterOpen&#39;: function(trigger){} // Called after menu or sub-menu opened.
+&#39;afterClose&#39;: function(trigger){} // Called after menu or sub-menu closed.
 </code></pre><h3>Methods</h3><pre><code>$(&#39;.menu&#39;).slicknav(&#39;toggle&#39;); // Method to toggle the menu
 $(&#39;.menu&#39;).slicknav(&#39;open&#39;); // Method to open the menu
 $(&#39;.menu&#39;).slicknav(&#39;close&#39;); // Method to close the menu
