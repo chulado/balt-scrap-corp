@@ -102,8 +102,15 @@
 .locations {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 3%;
+  padding-top: 2%;
 }
+
+.locations h6 {
+  font-size: 16px;
+  margin: 0px;
+  color: #60777a;
+}
+
 
 .location {
   text-align: center;
