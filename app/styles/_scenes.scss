@@ -126,7 +126,7 @@
 .scene-service {
   .crane-main {
     z-index: 0;
-    
+
     .layer {
       width: 39%;
       bottom: 70%;
@@ -152,3 +152,5 @@
 
   a { color: white; }
 }
+
+.active-section .content-section-teaser { z-index: +1; }
