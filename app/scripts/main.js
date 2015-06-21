@@ -41,6 +41,7 @@ function activate($target) {
   $("a[href^=#]").removeClass("active");
 
   isActivating = true;
+  console.log("activate", {scrollLeft: $target.position().left, scrollTop: $target.position().top });
   $('#wrapper').animate({scrollLeft: $target.position().left, scrollTop: $target.position().top }, 500, function() {
     $("a[href='#"+$target.attr("id")+"']").addClass("active");
     $target.addClass("active-section");
