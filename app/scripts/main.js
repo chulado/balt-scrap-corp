@@ -54,7 +54,7 @@ $("a[href^=#]").click(function(e){
   var $target = $($(e.target).attr("href"));
   if($target.length) {
     e.preventDefault();
-    
+    $(".navbar-collapse").collapse('hide');
     activate($target);
     
   }
