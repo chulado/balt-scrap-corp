@@ -153,11 +153,15 @@ li { font-size: 18px;}
   margin: 0;
 }
 .navbar-right, .navbar-text p {
- color: #dedede;
+ color: #c6c6c6;
  font-size: 14px;
  line-height: 18px;
  padding-top:11px; 
  margin-right:15px;
+ @media max-width($screen-sm) {
+.navbar-collapse .navbar-right { display: none; }
+}
+
 }
 
 #wrapper {
